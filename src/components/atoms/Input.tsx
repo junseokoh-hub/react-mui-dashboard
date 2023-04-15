@@ -1,4 +1,5 @@
-import TextField, { TextFieldProps } from "@mui/material/TextField";
+import TextField from "@mui/material/TextField";
+import type { TextFieldProps } from "@mui/material/TextField";
 
 const Input = ({ id, label, name, variant, type, sx }: TextFieldProps) => {
   return (

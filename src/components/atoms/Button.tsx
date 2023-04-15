@@ -1,4 +1,5 @@
-import MaterialButton, { ButtonProps } from "@mui/material/Button";
+import MaterialButton from "@mui/material/Button";
+import type { ButtonProps } from "@mui/material/Button";
 
 const Button = ({
   id,

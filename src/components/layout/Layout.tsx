@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import Navbar from "../Navbar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,7 +9,12 @@ interface LayoutProps {
 const isAuth = localStorage.getItem("auth");
 
 const Layout = ({ children }: LayoutProps) => {
-  return <main>{isAuth ? children : <Navigate to="/auth" />}</main>;
+  return (
+    <>
+      <Navbar />
+      <main>{isAuth ? children : <Navigate to="/auth" />}</main>
+    </>
+  );
 };
 
 export default Layout;
