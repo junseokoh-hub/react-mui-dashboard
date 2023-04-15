@@ -1,5 +1,19 @@
+import AuthForm from "../components/auth/AuthForm";
+import Container from "@mui/material/Container";
+
 const AuthPage = () => {
-  return <h2>This is AuthPage</h2>;
+  return (
+    <Container
+      sx={{
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <AuthForm />
+    </Container>
+  );
 };
 
 export default AuthPage;
