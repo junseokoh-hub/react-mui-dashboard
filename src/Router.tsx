@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Layout from "./components/layout/Layout";
 import AuthPage from "./pages/AuthPage";
+import CustomersPage from "./pages/CustomersPage";
+import ProductsPage from "./pages/ProductsPage";
 
 const routerInfo = [
   {
@@ -10,8 +12,21 @@ const routerInfo = [
     element: <HomePage />,
     withAuth: true,
   },
+
   {
     id: 2,
+    path: "/customers",
+    element: <CustomersPage />,
+    withAuth: true,
+  },
+  {
+    id: 3,
+    path: "/products",
+    element: <ProductsPage />,
+    withAuth: true,
+  },
+  {
+    id: 6,
     path: "/auth",
     element: <AuthPage />,
     withAuth: false,
