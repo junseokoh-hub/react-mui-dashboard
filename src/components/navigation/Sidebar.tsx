@@ -64,7 +64,7 @@ const Sidebar = () => {
           <ListItem key={content.label}>
             <ListItemButton onClick={() => navigate(content.route)}>
               <ListItemIcon>{content.icon}</ListItemIcon>
-              <ListItemText>{content.label}</ListItemText>
+              <ListItemText primary={content.label} />
             </ListItemButton>
           </ListItem>
         ))}

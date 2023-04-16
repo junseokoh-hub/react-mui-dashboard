@@ -1,8 +1,8 @@
 import Stack from "@mui/material/Stack";
 import AppBar from "@mui/material/AppBar";
-import Button from "./atoms/Button";
-import Avatar from "./atoms/Avatar";
-import Text from "./atoms/Text";
+import Button from "../atoms/Button";
+import Avatar from "../atoms/Avatar";
+import Text from "../atoms/Text";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
@@ -17,13 +17,8 @@ const Navbar = () => {
         flexDirection: "row",
       }}
     >
-      <Text
-        sx={{ flexGrow: 1 }}
-        variant="overline"
-        align="inherit"
-        gutterBottom={false}
-      >
-        Navbar
+      <Text sx={{ flexGrow: 1, fontWeight: 700 }} variant="h6">
+        DASHBOARD
       </Text>
       <Stack direction={"row"} alignItems={"center"} spacing={1}>
         <IconButton>
