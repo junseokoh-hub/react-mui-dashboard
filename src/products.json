@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "stock": 13,
+    "product": "Beef",
+    "price": "$16.53",
+    "origin": "South Korea",
+    "image": "https://images.unsplash.com/photo-1615937691194-97dbd3f3dc29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVlZnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 2,
+    "stock": 0,
+    "product": "Rambutan",
+    "price": "$43.07",
+    "origin": "United States",
+    "image": "https://images.unsplash.com/photo-1635830092719-0e3b5aedc364?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFtYnV0YW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 3,
+    "stock": 54,
+    "product": "Lemon",
+    "price": "$14.75",
+    "origin": "United States",
+    "image": "https://images.unsplash.com/photo-1590502593747-42a996133562?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bGVtb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 4,
+    "stock": 90,
+    "product": "Baguette",
+    "price": "$11.23",
+    "origin": "France",
+    "image": "https://images.unsplash.com/photo-1568471173242-461f0a730452?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmFndWV0dGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 5,
+    "stock": 42,
+    "product": "Cherry",
+    "price": "$10.10",
+    "origin": "Japan",
+    "image": "https://images.unsplash.com/photo-1528820600606-0ef5600cbfee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlcnJ5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 6,
+    "stock": 50,
+    "product": "Milk",
+    "price": "$47.14",
+    "origin": "United States",
+    "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1pbGt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 7,
+    "stock": 43,
+    "product": "Tomatoes",
+    "price": "$15.55",
+    "origin": "United States",
+    "image": "https://images.unsplash.com/photo-1571680322279-a226e6a4cc2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dG9tYXRvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 8,
+    "stock": 34,
+    "product": "Sugar",
+    "price": "$12.53",
+    "origin": "South Korea",
+    "image": "https://images.unsplash.com/photo-1610219171722-87b3f4170557?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3VnYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 9,
+    "stock": 0,
+    "product": "Rum",
+    "price": "$18.06",
+    "origin": "Mexico",
+    "image": "https://plus.unsplash.com/premium_photo-1669807973460-969c0d8e15ed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cnVtfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 10,
+    "stock": 23,
+    "product": "Apple Juice",
+    "price": "$17.26",
+    "origin": "United States",
+    "image": "https://images.unsplash.com/photo-1626120032630-b51c96a544f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBqdWljZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 11,
+    "stock": 48,
+    "product": "White Chocolate",
+    "price": "$18.99",
+    "origin": "Brazil",
+    "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBjaG9jb2xhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 12,
+    "stock": 0,
+    "product": "Wine",
+    "price": "$15.71",
+    "origin": "United States",
+    "image": "https://plus.unsplash.com/premium_photo-1679245158347-63ddc3fb2fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d2luZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  }
+]

@@ -7,6 +7,7 @@ const Text = ({
   sx,
   variant,
   gutterBottom,
+  color,
 }: TypographyProps) => {
   return (
     <Typography
@@ -14,6 +15,7 @@ const Text = ({
       sx={sx}
       variant={variant}
       gutterBottom={gutterBottom}
+      color={color}
     >
       {children}
     </Typography>

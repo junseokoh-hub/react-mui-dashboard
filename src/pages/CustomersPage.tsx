@@ -5,7 +5,7 @@ import Paper from "@mui/material/Paper";
 import TableHead from "../components/table/TableHead";
 import TableBody from "../components/table/TableBody";
 import TableFooter from "../components/table/TableFooter";
-import CUSTOMER_DATA from "../../public/customers.json";
+import CUSTOMER_DATA from "../customers.json";
 
 const CustomersPage = () => {
   const [page, setPage] = useState(0);
