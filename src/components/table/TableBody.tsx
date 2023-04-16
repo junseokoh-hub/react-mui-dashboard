@@ -1,6 +1,7 @@
 import MuiTableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
+import Checkbox from "@mui/material/Checkbox";
 
 interface KeyType {
   id: number;
@@ -25,6 +26,9 @@ const TableBody = ({ customers, page, rowsPerPage }: TableBodyProps) => {
         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
         .map((customer) => (
           <TableRow key={customer.id}>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
             <TableCell>{customer.id}</TableCell>
             <TableCell>{customer.full_name}</TableCell>
             <TableCell>{customer.email}</TableCell>
