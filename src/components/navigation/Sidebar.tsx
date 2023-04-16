@@ -1,6 +1,9 @@
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Divider from "@mui/material/Divider";
+import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -8,10 +11,15 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import GroupsIcon from "@mui/icons-material/Groups";
-import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import AddchartIcon from "@mui/icons-material/Addchart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { useNavigate } from "react-router-dom";
+import BarChartIcon from "@mui/icons-material/BarChart";
+
+interface ContentsType {
+  label: string;
+  route: string;
+}
 
 const contents = [
   {
@@ -26,23 +34,32 @@ const contents = [
   },
   {
     label: "Products",
-    icon: <DirectionsCarIcon />,
+    icon: <ShoppingBasketIcon />,
     route: "/products",
-  },
-  {
-    label: "Charts",
-    icon: <AddchartIcon />,
-    route: "/charts",
   },
   {
     label: "Admin",
     icon: <AccountCircleIcon />,
     route: "/admin",
   },
+  {
+    label: "Charts",
+    icon: <AddchartIcon />,
+    route: "/charts",
+  },
 ];
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+
+  const handleClick = (content: ContentsType) => {
+    if (content.label === "Charts") {
+      setOpen((prev) => !prev);
+    } else {
+      navigate(content.route);
+    }
+  };
 
   return (
     <Drawer
@@ -62,12 +79,22 @@ const Sidebar = () => {
       <List>
         {contents.map((content) => (
           <ListItem key={content.label}>
-            <ListItemButton onClick={() => navigate(content.route)}>
+            <ListItemButton onClick={() => handleClick(content)}>
               <ListItemIcon>{content.icon}</ListItemIcon>
               <ListItemText primary={content.label} />
             </ListItemButton>
           </ListItem>
         ))}
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List sx={{ paddingLeft: 3 }} disablePadding>
+            <ListItem>
+              <ListItemIcon>
+                <BarChartIcon />
+              </ListItemIcon>
+              <ListItemText primary="Bar Chart" />
+            </ListItem>
+          </List>
+        </Collapse>
       </List>
     </Drawer>
   );
