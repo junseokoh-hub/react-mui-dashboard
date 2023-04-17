@@ -1,24 +1,8 @@
-import React from "react";
+import Box from "@mui/material/Box";
+import type { BoxProps } from "@mui/material/Box";
 
-interface ChartContainerProps {
-  children: React.ReactNode;
-}
-
-const ChartContainer = ({ children }: ChartContainerProps) => {
-  return (
-    <div
-      style={{
-        width: "1200px",
-        height: "600px",
-        position: "relative",
-        overflow: "hidden",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      {children}
-    </div>
-  );
+const ChartContainer = ({ children, sx }: BoxProps) => {
+  return <Box sx={sx}>{children}</Box>;
 };
 
 export default ChartContainer;

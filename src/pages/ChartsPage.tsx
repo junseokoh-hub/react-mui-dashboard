@@ -19,7 +19,16 @@ const ChartsPage = () => {
   console.log("rendering");
 
   return (
-    <ChartContainer>
+    <ChartContainer
+      sx={{
+        width: "1200px",
+        height: "600px",
+        position: "relative",
+        overflow: "hidden",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       {type === "bar" ? <BarChart /> : null}
       {type === "line" ? <LineChart /> : null}
       {type === "pie" ? <PieChart /> : null}

@@ -1,7 +1,7 @@
-import Drawer from "@mui/material/Drawer";
-import Toolbar from "@mui/material/Toolbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Drawer from "@mui/material/Drawer";
+import Toolbar from "@mui/material/Toolbar";
 import Divider from "@mui/material/Divider";
 import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
@@ -17,6 +17,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import TimelineIcon from "@mui/icons-material/Timeline";
 import PieChartIcon from "@mui/icons-material/PieChart";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 interface ContentsType {
   label: string;
@@ -71,7 +73,7 @@ const chartContents = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleClick = (content: ContentsType) => {
     if (content.label === "Charts") {
@@ -102,6 +104,11 @@ const Sidebar = () => {
             <ListItemButton onClick={() => handleClick(content)}>
               <ListItemIcon>{content.icon}</ListItemIcon>
               <ListItemText primary={content.label} />
+              {content.label === "Charts" ? (
+                <ListItemIcon sx={{ pl: 3 }}>
+                  {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                </ListItemIcon>
+              ) : null}
             </ListItemButton>
           </ListItem>
         ))}
