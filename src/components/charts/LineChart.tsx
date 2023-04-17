@@ -7,9 +7,11 @@ import {
   Title,
   Tooltip,
   Legend,
-  ChartOptions,
+  ChartData,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { chartLabels } from "../../libs/chart-labels";
+import { chartOptions } from "../../libs/chart-options";
 
 ChartJS.register(
   CategoryScale,
@@ -21,33 +23,29 @@ ChartJS.register(
   Legend,
 );
 
-export const options: ChartOptions<"line"> = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top" as const,
-    },
-    title: {
-      display: true,
-      text: "Chart.js Line Chart",
+export const options = chartOptions(`Monthly Subscribers`, {
+  scales: {
+    line: {
+      type: "linear" as const,
+      position: "left" as const,
+      title: {
+        display: true,
+        text: "Subscribers",
+      },
     },
   },
-};
+});
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-
-export const data = {
-  labels,
+export const data: ChartData<"line"> = {
+  labels: chartLabels,
   datasets: [
     {
-      label: "Dataset 1",
-      data: [100, 200, 300, 400, 500, 600, 700],
+      type: "line" as const,
+      label: "Monthly Subscribers",
+      yAxisID: "line",
+      data: [142, 121, 98, 210, 197, 156, 310, 263, 219, 189, 301, 304],
       backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-    {
-      label: "Dataset 2",
-      data: [100, 200, 300, 400, 500, 600, 700],
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      borderColor: "rgba(255, 99, 132, 0.5)",
     },
   ],
 };

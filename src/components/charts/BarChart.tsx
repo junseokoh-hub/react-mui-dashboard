@@ -11,9 +11,10 @@ import {
   LineController,
   BarController,
   ChartData,
-  ChartOptions,
 } from "chart.js";
 import { Chart } from "react-chartjs-2";
+import { chartLabels } from "../../libs/chart-labels";
+import { chartOptions } from "../../libs/chart-options";
 
 ChartJS.register(
   CategoryScale,
@@ -28,13 +29,7 @@ ChartJS.register(
   BarController,
 );
 
-export const options: ChartOptions<"bar" | "line"> = {
-  responsive: true,
-  maintainAspectRatio: false,
-  interaction: {
-    mode: "index" as const,
-    intersect: false,
-  },
+export const options = chartOptions(`Monthly Sales & Rate`, {
   scales: {
     bar: {
       type: "linear" as const,
@@ -62,31 +57,7 @@ export const options: ChartOptions<"bar" | "line"> = {
       },
     },
   },
-  plugins: {
-    legend: {
-      position: "top" as const,
-    },
-    title: {
-      display: true,
-      text: "Chart.js Bar Chart",
-    },
-  },
-};
-
-const labels = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+});
 
 const dataset = [
   1500, 2123, 956, 798, 2300, 3198, 2690, 2780, 767, 1004, 1843, 1560,
@@ -101,7 +72,7 @@ const rate = () => {
 };
 
 export const data: ChartData<"bar" | "line"> = {
-  labels,
+  labels: chartLabels,
   datasets: [
     {
       type: "bar" as const,
