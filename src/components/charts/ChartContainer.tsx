@@ -6,7 +6,16 @@ interface ChartContainerProps {
 
 const ChartContainer = ({ children }: ChartContainerProps) => {
   return (
-    <div style={{ width: "1000px", height: "50vh", position: "relative" }}>
+    <div
+      style={{
+        width: "1200px",
+        height: "600px",
+        position: "relative",
+        overflow: "hidden",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       {children}
     </div>
   );

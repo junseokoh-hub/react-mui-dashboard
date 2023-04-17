@@ -7,6 +7,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartOptions,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
@@ -20,7 +21,7 @@ ChartJS.register(
   Legend,
 );
 
-export const options = {
+export const options: ChartOptions<"line"> = {
   responsive: true,
   plugins: {
     legend: {

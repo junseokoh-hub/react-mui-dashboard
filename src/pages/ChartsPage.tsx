@@ -16,11 +16,13 @@ const ChartsPage = () => {
     }
   }, []);
 
+  console.log("rendering");
+
   return (
     <ChartContainer>
-      {type === "bar" && <BarChart />}
-      {type === "line" && <LineChart />}
-      {type === "pie" && <PieChart />}
+      {type === "bar" ? <BarChart /> : null}
+      {type === "line" ? <LineChart /> : null}
+      {type === "pie" ? <PieChart /> : null}
     </ChartContainer>
   );
 };
