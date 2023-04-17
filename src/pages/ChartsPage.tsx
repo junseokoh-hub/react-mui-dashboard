@@ -1,17 +1,28 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ChartContainer from "../components/charts/ChartContainer";
+import BarChart from "../components/charts/BarChart";
+import LineChart from "../components/charts/LineChart";
+import PieChart from "../components/charts/PieChart";
 
 const ChartsPage = () => {
   const navigate = useNavigate();
   const searchParmas = new URLSearchParams(window.location.search.slice(1));
+  const type = searchParmas.get("type");
 
   useEffect(() => {
-    if (!searchParmas.get("type")) {
+    if (!type) {
       navigate("/charts?type=bar");
     }
   }, []);
 
-  return <h1>This is Charts Page!</h1>;
+  return (
+    <ChartContainer>
+      {type === "bar" && <BarChart />}
+      {type === "line" && <LineChart />}
+      {type === "pie" && <PieChart />}
+    </ChartContainer>
+  );
 };
 
 export default ChartsPage;
