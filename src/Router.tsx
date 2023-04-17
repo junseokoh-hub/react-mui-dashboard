@@ -4,6 +4,8 @@ import Layout from "./components/layout/Layout";
 import AuthPage from "./pages/AuthPage";
 import CustomersPage from "./pages/CustomersPage";
 import ProductsPage from "./pages/ProductsPage";
+import ChartsPage from "./pages/ChartsPage";
+import AdminPage from "./pages/AdminPage";
 
 const routerInfo = [
   {
@@ -23,6 +25,18 @@ const routerInfo = [
     id: 3,
     path: "/products",
     element: <ProductsPage />,
+    withAuth: true,
+  },
+  {
+    id: 4,
+    path: "/admin",
+    element: <AdminPage />,
+    withAuth: true,
+  },
+  {
+    id: 5,
+    path: "/charts",
+    element: <ChartsPage />,
     withAuth: true,
   },
   {

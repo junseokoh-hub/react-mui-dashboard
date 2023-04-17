@@ -15,6 +15,8 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import AddchartIcon from "@mui/icons-material/Addchart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import TimelineIcon from "@mui/icons-material/Timeline";
+import PieChartIcon from "@mui/icons-material/PieChart";
 
 interface ContentsType {
   label: string;
@@ -46,6 +48,24 @@ const contents = [
     label: "Charts",
     icon: <AddchartIcon />,
     route: "/charts",
+  },
+];
+
+const chartContents = [
+  {
+    label: "Bar Chart",
+    icon: <BarChartIcon />,
+    type: "bar",
+  },
+  {
+    label: "Line Chart",
+    icon: <TimelineIcon />,
+    type: "line",
+  },
+  {
+    label: "Pie Chart",
+    icon: <PieChartIcon />,
+    type: "pie",
   },
 ];
 
@@ -87,12 +107,16 @@ const Sidebar = () => {
         ))}
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List sx={{ paddingLeft: 3 }} disablePadding>
-            <ListItem>
-              <ListItemIcon>
-                <BarChartIcon />
-              </ListItemIcon>
-              <ListItemText primary="Bar Chart" />
-            </ListItem>
+            {chartContents.map((chartContent) => (
+              <ListItem key={chartContent.label}>
+                <ListItemButton
+                  onClick={() => navigate(`/charts?type=${chartContent.type}`)}
+                >
+                  <ListItemIcon>{chartContent.icon}</ListItemIcon>
+                  <ListItemText primary={chartContent.label} />
+                </ListItemButton>
+              </ListItem>
+            ))}
           </List>
         </Collapse>
       </List>
