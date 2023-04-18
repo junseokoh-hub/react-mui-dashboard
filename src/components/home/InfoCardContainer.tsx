@@ -44,7 +44,7 @@ const InfoCardContainer = () => {
   return (
     <Grid container pt={3} spacing={2} rowSpacing={4}>
       {cards.map((card) => (
-        <InfoCard card={card} />
+        <InfoCard key={card.id} card={card} />
       ))}
     </Grid>
   );

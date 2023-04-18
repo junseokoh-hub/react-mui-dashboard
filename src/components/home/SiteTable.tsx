@@ -1,4 +1,5 @@
 import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
 import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
@@ -7,6 +8,8 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import LinearProgress from "@mui/material/LinearProgress";
 import IconButton from "@mui/material/IconButton";
+import AvatarGroup from "@mui/material/AvatarGroup";
+import Avatar from "@mui/material/Avatar";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -72,22 +75,34 @@ const SiteTable = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Subs</TableCell>
-            <TableCell>Completion</TableCell>
+            {["Name", "Members", "Subs", "Completion"].map((item) => (
+              <TableCell align="left" key={item}>
+                {item}
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
           {sites.map((site) => (
             <TableRow hover={true} key={site.id} sx={{ cursor: "pointer" }}>
               <TableCell sx={{ display: "flex", alignItems: "center" }}>
-                <IconButton sx={{ color: site.color }}>{site.icon}</IconButton>{" "}
+                <IconButton sx={{ color: site.color }}>{site.icon}</IconButton>
                 <Text variant="overline" sx={{ fontWeight: 600 }}>
                   {site.site_name}
                 </Text>
               </TableCell>
-              <TableCell>{site.subs}</TableCell>
               <TableCell>
+                <AvatarGroup
+                  sx={{ width: { sm: "90%", md: "60%", lg: "30%" } }}
+                  max={3}
+                >
+                  {new Array(7).fill(null).map((_, i) => (
+                    <Avatar key={i} src="" alt="" />
+                  ))}
+                </AvatarGroup>
+              </TableCell>
+              <TableCell>{site.subs}</TableCell>
+              <TableCell colSpan={3}>
                 <LinearProgress
                   value={site.completion}
                   variant="determinate"
