@@ -5,7 +5,7 @@ import AuthPage from "./pages/AuthPage";
 import CustomersPage from "./pages/CustomersPage";
 import ProductsPage from "./pages/ProductsPage";
 import ChartsPage from "./pages/ChartsPage";
-import AdminPage from "./pages/AdminPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const routerInfo = [
   {
@@ -29,8 +29,8 @@ const routerInfo = [
   },
   {
     id: 4,
-    path: "/admin",
-    element: <AdminPage />,
+    path: "/profile",
+    element: <ProfilePage />,
     withAuth: true,
   },
   {

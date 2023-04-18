@@ -42,9 +42,9 @@ const contents = [
     route: "/products",
   },
   {
-    label: "Admin",
+    label: "Profile",
     icon: <AccountCircleIcon />,
-    route: "/admin",
+    route: "/profile",
   },
   {
     label: "Charts",

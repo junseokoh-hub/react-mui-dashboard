@@ -1,7 +1,15 @@
 import TextField from "@mui/material/TextField";
 import type { TextFieldProps } from "@mui/material/TextField";
 
-const Input = ({ id, label, name, variant, type, sx }: TextFieldProps) => {
+const Input = ({
+  id,
+  label,
+  name,
+  variant,
+  type,
+  sx,
+  fullWidth,
+}: TextFieldProps) => {
   return (
     <TextField
       id={id}
@@ -10,6 +18,7 @@ const Input = ({ id, label, name, variant, type, sx }: TextFieldProps) => {
       variant={variant}
       type={type}
       sx={sx}
+      fullWidth={fullWidth}
     />
   );
 };
