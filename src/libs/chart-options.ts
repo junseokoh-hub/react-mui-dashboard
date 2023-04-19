@@ -1,9 +1,10 @@
-import { ChartOptions, ChartTypeRegistry } from "chart.js";
+import { ChartTypeRegistry, CoreChartOptions } from "chart.js";
+import { DeepPartial } from "chart.js/dist/types/utils";
 
 export const chartOptions = (
   text: string,
   options?: any,
-): ChartOptions<keyof ChartTypeRegistry> => {
+): DeepPartial<CoreChartOptions<keyof ChartTypeRegistry>> => {
   return {
     responsive: true,
     maintainAspectRatio: false,

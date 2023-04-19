@@ -1,13 +1,19 @@
 import Grid from "@mui/material/Grid";
+import AreaChart from "../charts/AreaChart";
+import DoughnutChart from "../charts/DoughnutChart";
+import ChartGridItem from "./ChartGridItem";
 
-interface ChartGridContainerProps {
-  children: React.ReactNode;
-}
+const charts = [
+  { id: 1, chart: <AreaChart /> },
+  { id: 2, chart: <DoughnutChart /> },
+];
 
-const ChartGridContainer = ({ children }: ChartGridContainerProps) => {
+const ChartGridContainer = () => {
   return (
     <Grid container sx={{ mt: 2, position: "relative", height: "500px" }}>
-      {children}
+      {charts.map((chart) => (
+        <ChartGridItem key={chart.id} chart={chart.chart} />
+      ))}
     </Grid>
   );
 };

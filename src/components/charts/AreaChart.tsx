@@ -13,6 +13,7 @@ import {
 import { Line } from "react-chartjs-2";
 import { chartOptions } from "../../libs/chart-options";
 import { chartLabels } from "../../libs/chart-labels";
+import { interactionOption } from "../../libs/chart-interaction-option";
 
 ChartJS.register(
   CategoryScale,
@@ -25,12 +26,7 @@ ChartJS.register(
   Legend,
 );
 
-const options = chartOptions(`Monthly Subscribers`, {
-  interaction: {
-    mode: "index" as const,
-    intersect: false,
-  },
-});
+const options = chartOptions(`Monthly Subscribers`, interactionOption);
 
 export const data: ChartData<"line"> = {
   labels: chartLabels,

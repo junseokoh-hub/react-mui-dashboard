@@ -2,10 +2,10 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
 interface ChartGridItemProps {
-  children: React.ReactNode;
+  chart: JSX.Element;
 }
 
-const ChartGridItem = ({ children }: ChartGridItemProps) => {
+const ChartGridItem = ({ chart }: ChartGridItemProps) => {
   return (
     <Grid item md={12} lg={6} sx={{ mb: { md: 2, lg: 0 } }}>
       <Paper
@@ -15,7 +15,7 @@ const ChartGridItem = ({ children }: ChartGridItemProps) => {
           height: "100%",
         }}
       >
-        {children}
+        {chart}
       </Paper>
     </Grid>
   );
