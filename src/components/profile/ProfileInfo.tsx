@@ -10,7 +10,7 @@ const ProfileInfo = () => {
   return (
     <Box
       component={Paper}
-      width={"100%"}
+      width={{ sm: "60%", md: "80%", lg: "100%" }}
       display="flex"
       justifyContent={"center"}
       alignItems={"center"}

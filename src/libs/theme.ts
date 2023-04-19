@@ -10,6 +10,9 @@ export const theme = createTheme({
           margin: 0,
           boxSizing: "border-box",
         },
+        body: {
+          overflowX: "hidden",
+        },
       },
     },
   },
@@ -22,6 +25,7 @@ export const theme = createTheme({
   },
   breakpoints: {
     values: {
+      xs: 0,
       sm: 480,
       md: 768,
       lg: 1080,

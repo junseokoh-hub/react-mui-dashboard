@@ -7,8 +7,9 @@ const ProfilePage = () => {
     <Stack
       height={"93%"}
       justifyContent={"space-around"}
-      direction="row"
+      direction={{ sm: "column", lg: "row" }}
       spacing={2}
+      mt={{ md: 1, lg: 0 }}
     >
       <ProfileInfo />
       <ProfileInputsContainer />

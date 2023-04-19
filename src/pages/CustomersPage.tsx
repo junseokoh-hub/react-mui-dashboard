@@ -21,7 +21,10 @@ const CustomersPage = () => {
   );
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer
+      component={Paper}
+      sx={{ width: { sm: "70%", md: "90%", lg: "100%" } }}
+    >
       <Table>
         <TableHead keys={keys} />
         <TableBody

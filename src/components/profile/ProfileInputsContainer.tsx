@@ -2,13 +2,20 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import InputLabel from "@mui/material/InputLabel";
+import styled from "@emotion/styled";
 import Input from "../atoms/Input";
 import Button from "../atoms/Button";
+
+const StyledTextarea = styled.textarea`
+  width: 100%;
+  resize: none;
+`;
 
 const ProfileInputsContainer = () => {
   return (
     <Box
       component={Paper}
+      width={{ sm: "60%", md: "80%", lg: "100%" }}
       display="flex"
       justifyContent={"center"}
       alignItems={"center"}
@@ -81,19 +88,14 @@ const ProfileInputsContainer = () => {
           <Grid item lg={2}>
             <Input name="zip" type="text" variant="outlined" label="Zip" />
           </Grid>
-          <Grid item lg={12}>
+          <Grid item sm={12} md={12}>
             <InputLabel htmlFor="description">Description</InputLabel>
-            <textarea
-              name="description"
-              id="description"
-              cols={104}
-              rows={15}
-              style={{ resize: "none" }}
-            ></textarea>
+            <StyledTextarea name="description" id="description" rows={15} />
           </Grid>
           <Grid
             item
-            xs={4}
+            sm={12}
+            md={12}
             lg={12}
             sx={{ display: "grid", placeItems: "center" }}
           >
