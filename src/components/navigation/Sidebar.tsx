@@ -86,10 +86,10 @@ const Sidebar = () => {
   return (
     <Drawer
       sx={{
-        width: 240,
+        width: { sm: 100, md: 240 },
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: 240,
+          width: { sm: 100, md: 240 },
           boxSizing: "border-box",
         },
       }}
@@ -103,9 +103,14 @@ const Sidebar = () => {
           <ListItem key={content.label}>
             <ListItemButton onClick={() => handleClick(content)}>
               <ListItemIcon>{content.icon}</ListItemIcon>
-              <ListItemText primary={content.label} />
+              <ListItemText
+                primary={content.label}
+                sx={{ display: { sm: "none", md: "flex" } }}
+              />
               {content.label === "Charts" ? (
-                <ListItemIcon sx={{ pl: 3 }}>
+                <ListItemIcon
+                  sx={{ pl: 3, display: { sm: "none", md: "block" } }}
+                >
                   {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </ListItemIcon>
               ) : null}
@@ -113,14 +118,17 @@ const Sidebar = () => {
           </ListItem>
         ))}
         <Collapse in={open} timeout="auto" unmountOnExit>
-          <List sx={{ paddingLeft: 3 }} disablePadding>
+          <List sx={{ paddingLeft: { sm: 0, md: 3 } }} disablePadding>
             {chartContents.map((chartContent) => (
               <ListItem key={chartContent.label}>
                 <ListItemButton
                   onClick={() => navigate(`/charts?type=${chartContent.type}`)}
                 >
                   <ListItemIcon>{chartContent.icon}</ListItemIcon>
-                  <ListItemText primary={chartContent.label} />
+                  <ListItemText
+                    primary={chartContent.label}
+                    sx={{ display: { sm: "none", md: "flex" } }}
+                  />
                 </ListItemButton>
               </ListItem>
             ))}

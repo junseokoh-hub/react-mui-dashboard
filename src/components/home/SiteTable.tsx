@@ -72,12 +72,19 @@ const sites = [
 
 const SiteTable = () => {
   return (
-    <TableContainer component={Paper} sx={{ mt: 2 }}>
+    <TableContainer component={Paper} sx={{ m: "0 auto", mt: 2, width: "90%" }}>
       <Table>
         <TableHead>
           <TableRow>
             {["Name", "Members", "Subs", "Completion"].map((item) => (
-              <TableCell align="left" key={item}>
+              <TableCell
+                align="left"
+                key={item}
+                sx={{
+                  display:
+                    item === "Members" ? { sm: "none", md: "block" } : null,
+                }}
+              >
                 {item}
               </TableCell>
             ))}
@@ -98,14 +105,14 @@ const SiteTable = () => {
                     sx={{
                       fontWeight: 600,
                       height: "100%",
-                      display: { sm: "none", md: "flex" },
+                      display: { sm: "none", md: "block" },
                     }}
                   >
                     {site.site_name}
                   </Text>
                 </Stack>
               </TableCell>
-              <TableCell>
+              <TableCell sx={{ display: { sm: "none", md: "block" } }}>
                 <Stack direction="row">
                   {new Array(2).fill(null).map((_, i) => (
                     <Avatar key={i} src="" alt="" />

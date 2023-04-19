@@ -7,11 +7,11 @@ interface ChartGridItemProps {
 
 const ChartGridItem = ({ chart }: ChartGridItemProps) => {
   return (
-    <Grid item md={12} lg={6} sx={{ mb: { md: 2, lg: 0 } }}>
+    <Grid item sm={12} md={8} lg={6} sx={{ mb: { sm: 2, lg: 0 } }}>
       <Paper
         sx={{
           margin: "0 auto",
-          width: { lg: "90%" },
+          width: { sm: "90%", lg: "90%" },
           height: "100%",
         }}
       >

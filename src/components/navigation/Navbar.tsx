@@ -12,7 +12,7 @@ const Navbar = () => {
     <AppBar
       position="fixed"
       sx={{
-        width: `calc(100% - 240px)`,
+        width: { sm: `calc(100% - 100px)`, md: `calc(100% - 240px)` },
         padding: "1rem",
         flexDirection: "row",
       }}
