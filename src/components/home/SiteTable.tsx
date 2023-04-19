@@ -1,5 +1,5 @@
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
@@ -10,6 +10,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import IconButton from "@mui/material/IconButton";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -85,21 +86,31 @@ const SiteTable = () => {
         <TableBody>
           {sites.map((site) => (
             <TableRow hover={true} key={site.id} sx={{ cursor: "pointer" }}>
-              <TableCell sx={{ display: "flex", alignItems: "center" }}>
-                <IconButton sx={{ color: site.color }}>{site.icon}</IconButton>
-                <Text variant="overline" sx={{ fontWeight: 600 }}>
-                  {site.site_name}
-                </Text>
+              <TableCell>
+                <Stack direction="row" alignItems={"center"}>
+                  <Tooltip title={site.site_name} placement="top-start" arrow>
+                    <IconButton sx={{ color: site.color }}>
+                      {site.icon}
+                    </IconButton>
+                  </Tooltip>
+                  <Text
+                    variant="overline"
+                    sx={{
+                      fontWeight: 600,
+                      height: "100%",
+                      display: { sm: "none", md: "flex" },
+                    }}
+                  >
+                    {site.site_name}
+                  </Text>
+                </Stack>
               </TableCell>
               <TableCell>
-                <AvatarGroup
-                  sx={{ width: { sm: "90%", md: "60%", lg: "30%" } }}
-                  max={3}
-                >
-                  {new Array(7).fill(null).map((_, i) => (
+                <Stack direction="row">
+                  {new Array(2).fill(null).map((_, i) => (
                     <Avatar key={i} src="" alt="" />
                   ))}
-                </AvatarGroup>
+                </Stack>
               </TableCell>
               <TableCell>{site.subs}</TableCell>
               <TableCell colSpan={3}>

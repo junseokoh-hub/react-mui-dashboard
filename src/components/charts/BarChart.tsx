@@ -30,6 +30,10 @@ ChartJS.register(
 );
 
 export const options = chartOptions(`Monthly Sales & Rate`, {
+  interaction: {
+    mode: "index" as const,
+    intersect: false,
+  },
   scales: {
     bar: {
       type: "linear" as const,

@@ -2,41 +2,33 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  LineElement,
   PointElement,
+  LineElement,
   Title,
   Tooltip,
+  Filler,
   Legend,
   ChartData,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { chartLabels } from "../../libs/chart-labels";
 import { chartOptions } from "../../libs/chart-options";
+import { chartLabels } from "../../libs/chart-labels";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  LineElement,
   PointElement,
+  LineElement,
   Title,
   Tooltip,
+  Filler,
   Legend,
 );
 
-export const options = chartOptions(`Monthly Subscribers`, {
+const options = chartOptions(`Monthly Subscribers`, {
   interaction: {
     mode: "index" as const,
     intersect: false,
-  },
-  scales: {
-    line: {
-      type: "linear" as const,
-      position: "left" as const,
-      title: {
-        display: true,
-        text: "Subscribers",
-      },
-    },
   },
 });
 
@@ -48,15 +40,16 @@ export const data: ChartData<"line"> = {
       label: "Monthly Subscribers",
       yAxisID: "line",
       data: [142, 121, 98, 210, 197, 156, 310, 263, 219, 189, 301, 304],
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-      borderColor: "rgba(255, 99, 132, 0.5)",
+      backgroundColor: "rgba(6, 150, 73, 0.5)",
+      borderColor: "rgba(6, 150, 73, 0.5)",
+      fill: true,
       cubicInterpolationMode: "monotone",
     },
   ],
 };
 
-const LineChart = () => {
-  return <Line options={options} data={data} />;
+const AreaChart = () => {
+  return <Line data={data} options={options} />;
 };
 
-export default LineChart;
+export default AreaChart;

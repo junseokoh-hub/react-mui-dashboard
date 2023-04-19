@@ -7,10 +7,6 @@ export const chartOptions = (
   return {
     responsive: true,
     maintainAspectRatio: false,
-    interaction: {
-      mode: "index" as const,
-      intersect: false,
-    },
     ...options,
     plugins: {
       legend: {

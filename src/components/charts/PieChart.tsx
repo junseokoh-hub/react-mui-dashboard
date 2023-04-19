@@ -5,9 +5,9 @@ import { chartOptions } from "../../libs/chart-options";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const options = chartOptions(`Sales of the Month`);
+const options = chartOptions(`Sales of the Month`);
 
-export const data = {
+const data = {
   labels: PRODUCTS.map((product) => product.product),
   datasets: [
     {
