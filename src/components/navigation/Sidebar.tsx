@@ -4,6 +4,7 @@ import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
 import Divider from "@mui/material/Divider";
 import Collapse from "@mui/material/Collapse";
+import Tooltip from "@mui/material/Tooltip";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -102,7 +103,9 @@ const Sidebar = () => {
         {contents.map((content) => (
           <ListItem key={content.label}>
             <ListItemButton onClick={() => handleClick(content)}>
-              <ListItemIcon>{content.icon}</ListItemIcon>
+              <Tooltip title={content.label} arrow>
+                <ListItemIcon>{content.icon}</ListItemIcon>
+              </Tooltip>
               <ListItemText
                 primary={content.label}
                 sx={{ display: { sm: "none", md: "flex" } }}
@@ -124,7 +127,9 @@ const Sidebar = () => {
                 <ListItemButton
                   onClick={() => navigate(`/charts?type=${chartContent.type}`)}
                 >
-                  <ListItemIcon>{chartContent.icon}</ListItemIcon>
+                  <Tooltip title={chartContent.label} arrow>
+                    <ListItemIcon>{chartContent.icon}</ListItemIcon>
+                  </Tooltip>
                   <ListItemText
                     primary={chartContent.label}
                     sx={{ display: { sm: "none", md: "flex" } }}

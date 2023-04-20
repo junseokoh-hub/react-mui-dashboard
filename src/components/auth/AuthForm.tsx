@@ -20,7 +20,6 @@ const AuthForm = () => {
     const formData = new FormData(e.currentTarget);
     const emailInput = formData.get("email") as string;
     const passwordInput = formData.get("password") as string;
-    console.log(emailInput);
 
     if (
       !emailInput ||

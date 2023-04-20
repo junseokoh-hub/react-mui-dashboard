@@ -16,12 +16,11 @@ const ChartsPage = () => {
     }
   }, []);
 
-  console.log("rendering");
-
   return (
     <ChartContainer
       sx={{
-        width: "1200px",
+        width: { sm: "500px", md: "700px", lg: "1200px" },
+        // width: "100%",
         height: "600px",
         position: "relative",
         overflow: "hidden",
