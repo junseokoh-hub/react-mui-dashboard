@@ -10,6 +10,7 @@ const Button = ({
   color,
   fullWidth,
   sx,
+  onClick,
 }: ButtonProps) => {
   return (
     <MaterialButton
@@ -20,6 +21,7 @@ const Button = ({
       color={color}
       fullWidth={fullWidth}
       sx={sx}
+      onClick={onClick}
     >
       {children}
     </MaterialButton>

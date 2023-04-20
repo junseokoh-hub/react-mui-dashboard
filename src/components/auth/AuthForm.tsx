@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../atoms/Input";
 import Button from "../atoms/Button";
 import FormLabel from "@mui/material/FormLabel";
 import { styled } from "@mui/material/styles";
+import { AuthContext } from "../../context/AuthContext";
 
 const Form = styled("form")({
   padding: "4rem",
@@ -15,6 +17,8 @@ const Form = styled("form")({
 
 const AuthForm = () => {
   const navigate = useNavigate();
+  const { login, user } = useContext(AuthContext);
+
   const authSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -30,10 +34,10 @@ const AuthForm = () => {
       return;
     }
 
-    localStorage.setItem("auth", emailInput);
+    login(emailInput);
 
-    if (localStorage.getItem("auth")) {
-      navigate("/");
+    if (user) {
+      navigate("/", { replace: true });
     }
   };
 

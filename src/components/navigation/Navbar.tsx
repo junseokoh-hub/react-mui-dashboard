@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import AppBar from "@mui/material/AppBar";
@@ -7,8 +8,10 @@ import Text from "../atoms/Text";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
+  const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   return (
@@ -43,6 +46,7 @@ const Navbar = () => {
           type="button"
           variant="text"
           sx={{ color: "#fff" }}
+          onClick={logout}
         >
           Log out
         </Button>

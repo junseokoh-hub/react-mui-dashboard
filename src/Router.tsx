@@ -6,6 +6,7 @@ import CustomersPage from "./pages/CustomersPage";
 import ProductsPage from "./pages/ProductsPage";
 import ChartsPage from "./pages/ChartsPage";
 import ProfilePage from "./pages/ProfilePage";
+import AuthContextProvider from "./context/AuthContext";
 
 const routerInfo = [
   {
@@ -52,12 +53,16 @@ export const router = createBrowserRouter(
     if (router.withAuth) {
       return {
         path: router.path,
-        element: <Layout>{router.element}</Layout>,
+        element: (
+          <AuthContextProvider>
+            <Layout>{router.element}</Layout>
+          </AuthContextProvider>
+        ),
       };
     } else {
       return {
         path: router.path,
-        element: router.element,
+        element: <AuthContextProvider>{router.element}</AuthContextProvider>,
       };
     }
   }),
