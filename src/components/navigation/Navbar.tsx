@@ -23,7 +23,11 @@ const Navbar = () => {
         flexDirection: "row",
       }}
     >
-      <Text sx={{ flexGrow: 1, fontWeight: 700 }} variant="h6">
+      <Text
+        sx={{ flexGrow: 1, fontWeight: 700, cursor: "pointer" }}
+        variant="h6"
+        onClick={() => navigate("/")}
+      >
         DASHBOARD
       </Text>
       <Stack direction={"row"} alignItems={"center"} spacing={1}>

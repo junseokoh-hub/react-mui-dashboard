@@ -3,7 +3,6 @@ import PRODUCTS from "../products.json";
 import ProductsItem from "../components/products/ProductsItem";
 
 const ProductsPage = () => {
-  console.log("rendering");
   return (
     <Grid container spacing={2}>
       {PRODUCTS.map((product) => (

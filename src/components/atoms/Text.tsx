@@ -8,6 +8,7 @@ const Text = ({
   variant,
   gutterBottom,
   color,
+  onClick,
 }: TypographyProps) => {
   return (
     <Typography
@@ -16,6 +17,7 @@ const Text = ({
       variant={variant}
       gutterBottom={gutterBottom}
       color={color}
+      onClick={onClick}
     >
       {children}
     </Typography>
