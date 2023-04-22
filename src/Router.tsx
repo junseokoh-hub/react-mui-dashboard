@@ -1,12 +1,16 @@
+import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import CircularProgress from "@mui/material/CircularProgress";
+import LinearProgress from "@mui/material/LinearProgress";
 import Layout from "./components/layout/Layout";
-import AuthPage from "./pages/AuthPage";
-import CustomersPage from "./pages/CustomersPage";
-import ProductsPage from "./pages/ProductsPage";
-import ChartsPage from "./pages/ChartsPage";
-import ProfilePage from "./pages/ProfilePage";
 import AuthContextProvider from "./context/AuthContext";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AuthPage = lazy(() => import("./pages/AuthPage"));
+const CustomersPage = lazy(() => import("./pages/CustomersPage"));
+const ProductsPage = lazy(() => import("./pages/ProductsPage"));
+const ChartsPage = lazy(() => import("./pages/ChartsPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 
 const routerInfo = [
   {
@@ -55,7 +59,22 @@ export const router = createBrowserRouter(
         path: router.path,
         element: (
           <AuthContextProvider>
-            <Layout>{router.element}</Layout>
+            <Layout>
+              <Suspense
+                fallback={
+                  <LinearProgress
+                    sx={{
+                      position: "fixed",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                    }}
+                  />
+                }
+              >
+                {router.element}
+              </Suspense>
+            </Layout>
           </AuthContextProvider>
         ),
       };
