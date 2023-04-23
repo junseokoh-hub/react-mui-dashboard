@@ -1,6 +1,6 @@
 import { KANBAN_KEYS } from "../libs/kanban-keys";
 import { KanbanSectionsType, PostType, StatusType } from "../types/kanban";
-import { getPostsByStatus } from "./task";
+import { getPostsByStatus } from "./post";
 
 export const initializeKanban = (posts: PostType[] = []) => {
   const kanbanSections: KanbanSectionsType = {};

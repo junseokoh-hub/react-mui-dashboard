@@ -1,9 +1,11 @@
+import { useCallback } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import {
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import Text from "../atoms/Text";
 import SortableItem from "./SortableItem";
 import SortablePost from "./SortablePost";
@@ -20,7 +22,7 @@ const KanbanPlate = ({ id, title, posts }: KanbanPlateProps) => {
     id,
   });
 
-  const colorPicker = () => {
+  const colorPicker = useCallback(() => {
     switch (title) {
       case "requested":
         return "error.main";
@@ -31,13 +33,12 @@ const KanbanPlate = ({ id, title, posts }: KanbanPlateProps) => {
       default:
         return "#000";
     }
-  };
+  }, []);
 
   return (
-    <Box
+    <Paper
       sx={{
         p: 2,
-        boxShadow: "0px 0px 6px 2px rgba(0,0,0,0.3)",
       }}
     >
       <Text variant="h6" sx={{ mb: 2, fontWeight: 600, color: colorPicker() }}>
@@ -58,7 +59,7 @@ const KanbanPlate = ({ id, title, posts }: KanbanPlateProps) => {
           ))}
         </div>
       </SortableContext>
-    </Box>
+    </Paper>
   );
 };
 

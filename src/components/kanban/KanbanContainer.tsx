@@ -18,7 +18,7 @@ import KanbanInput from "./KanbanInput";
 import { useState } from "react";
 import { extractSectionKey, initializeKanban } from "../../utils/board";
 import { KanbanSectionsType } from "../../types/kanban";
-import { getPostById } from "../../utils/task";
+import { getPostById } from "../../utils/post";
 import SortablePost from "./SortablePost";
 import KanbanPlate from "./KanbanPlate";
 
@@ -75,7 +75,7 @@ const KanbanContainer = () => {
     const activeKey = extractSectionKey(kanbanSections, activeId);
     const overKey = extractSectionKey(kanbanSections, overId);
 
-    if (!activeKey || !overKey || activeKey === overKey) {
+    if (!activeKey || !overKey || activeKey !== overKey) {
       return;
     }
 
@@ -111,9 +111,9 @@ const KanbanContainer = () => {
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{ mt: 1 }}>
           {Object.keys(kanbanSections).map((key) => (
-            <Grid key={key} item sm={4}>
+            <Grid key={key} item sm={12} md={4}>
               <KanbanPlate id={key} title={key} posts={kanbanSections[key]} />
             </Grid>
           ))}

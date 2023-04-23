@@ -8,7 +8,7 @@ interface PostOverlayProps {
 
 const SortablePost = ({ post }: PostOverlayProps) => {
   return (
-    <Card>
+    <Card sx={{ cursor: "grab" }}>
       <CardContent>{post.title}</CardContent>
     </Card>
   );

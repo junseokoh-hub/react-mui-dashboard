@@ -1,4 +1,4 @@
-import { createContext, useState, useCallback, useEffect } from "react";
+import { createContext, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface ContextType {
