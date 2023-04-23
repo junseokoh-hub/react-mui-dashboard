@@ -15,6 +15,7 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import AddchartIcon from "@mui/icons-material/Addchart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ViewKanbanIcon from "@mui/icons-material/ViewKanban";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import TimelineIcon from "@mui/icons-material/Timeline";
 import PieChartIcon from "@mui/icons-material/PieChart";
@@ -47,6 +48,7 @@ const contents = [
     icon: <AccountCircleIcon />,
     route: "/profile",
   },
+  { label: "Kanban", icon: <ViewKanbanIcon />, route: "/kanban" },
   {
     label: "Charts",
     icon: <AddchartIcon />,

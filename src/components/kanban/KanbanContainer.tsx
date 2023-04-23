@@ -14,7 +14,7 @@ import {
 import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import KanbanInput from "./kanbanInput";
+import KanbanInput from "./KanbanInput";
 import { useState } from "react";
 import { extractSectionKey, initializeKanban } from "../../utils/board";
 import { KanbanSectionsType } from "../../types/kanban";

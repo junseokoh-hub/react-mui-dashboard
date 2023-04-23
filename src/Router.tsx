@@ -3,7 +3,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import AuthContextProvider from "./context/AuthContext";
 import LoadingIndicator from "./utils/LoadingIndicator";
-import KanbanPage from "./pages/KanbanPage";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
@@ -11,6 +10,7 @@ const CustomersPage = lazy(() => import("./pages/CustomersPage"));
 const ProductsPage = lazy(() => import("./pages/ProductsPage"));
 const ChartsPage = lazy(() => import("./pages/ChartsPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
+const KanbanPage = lazy(() => import("./pages/KanbanPage"));
 
 const routerInfo = [
   {
