@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import AuthContextProvider from "./context/AuthContext";
 import LoadingIndicator from "./utils/LoadingIndicator";
+import KanbanPage from "./pages/KanbanPage";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
@@ -45,6 +46,12 @@ const routerInfo = [
   },
   {
     id: 6,
+    path: "/kanban",
+    element: <KanbanPage />,
+    withAuth: true,
+  },
+  {
+    id: 7,
     path: "/auth",
     element: <AuthPage />,
     withAuth: false,
