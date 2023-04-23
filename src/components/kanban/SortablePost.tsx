@@ -1,4 +1,5 @@
-import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import { PostType } from "../../types/kanban";
 
 interface PostOverlayProps {
@@ -6,7 +7,11 @@ interface PostOverlayProps {
 }
 
 const SortablePost = ({ post }: PostOverlayProps) => {
-  return <div style={{ color: "white" }}>{post.title}</div>;
+  return (
+    <Card>
+      <CardContent>{post.title}</CardContent>
+    </Card>
+  );
 };
 
 export default SortablePost;

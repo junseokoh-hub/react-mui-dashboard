@@ -31,7 +31,7 @@ const KanbanInput = ({ setKanbanSections }: KanbanInputProps) => {
 
   return (
     <Box>
-      <input type="text" ref={inputRef} />
+      <Input type="text" inputRef={inputRef} />
       <Button
         id="kanban-button"
         name="kanban-button"

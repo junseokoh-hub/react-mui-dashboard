@@ -101,8 +101,6 @@ const KanbanContainer = () => {
     ? getPostById(kanbanSections[activeKey as string], activePostId)
     : null;
 
-  console.log(kanbanSections);
-
   return (
     <Box>
       <KanbanInput setKanbanSections={setKanbanSections} />
@@ -113,7 +111,7 @@ const KanbanContainer = () => {
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        <Grid container>
+        <Grid container spacing={4}>
           {Object.keys(kanbanSections).map((key) => (
             <Grid key={key} item sm={4}>
               <KanbanPlate id={key} title={key} posts={kanbanSections[key]} />
