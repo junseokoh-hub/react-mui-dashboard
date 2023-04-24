@@ -36,12 +36,19 @@ const KanbanPlate = ({ id, title, posts }: KanbanPlateProps) => {
   }, []);
 
   return (
-    <Paper
-      sx={{
-        p: 2,
-      }}
-    >
-      <Text variant="h6" sx={{ mb: 2, fontWeight: 600, color: colorPicker() }}>
+    <Paper>
+      <Text
+        variant="h6"
+        sx={{
+          p: 2,
+          mb: 2,
+          borderTopLeftRadius: "inherit",
+          borderTopRightRadius: "inherit",
+          fontWeight: 600,
+          color: "#fff",
+          bgcolor: colorPicker(),
+        }}
+      >
         {title.toUpperCase()}
       </Text>
       <SortableContext
@@ -49,7 +56,10 @@ const KanbanPlate = ({ id, title, posts }: KanbanPlateProps) => {
         items={posts}
         strategy={verticalListSortingStrategy}
       >
-        <div ref={setNodeRef} style={{ minHeight: "200px", margin: "0 10px" }}>
+        <div
+          ref={setNodeRef}
+          style={{ minHeight: "200px", margin: "0 10px", padding: "0 0.5rem" }}
+        >
           {posts.map((post) => (
             <Box key={post.id} sx={{ mb: 2 }}>
               <SortableItem id={post.id}>

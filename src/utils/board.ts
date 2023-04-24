@@ -15,7 +15,7 @@ export const initializeKanban = (posts: PostType[] = []) => {
 export const extractSectionKey = (
   kanbanSections: KanbanSectionsType,
   id: string,
-) => {
+): string | undefined => {
   if (id in kanbanSections) {
     return id;
   }
