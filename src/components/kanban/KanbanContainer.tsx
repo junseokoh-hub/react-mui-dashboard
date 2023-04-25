@@ -15,14 +15,16 @@ import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import KanbanInput from "./KanbanInput";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { extractSectionKey, initializeKanban } from "../../utils/board";
 import { KanbanSectionsType } from "../../types/kanban";
 import { getPostById } from "../../utils/post";
 import SortablePost from "./SortablePost";
 import KanbanPlate from "./KanbanPlate";
+import { SelectChangeEvent } from "@mui/material";
 
 const KanbanContainer = () => {
+  const [section, setSection] = useState("requested");
   const [kanbanSections, setKanbanSections] = useState<KanbanSectionsType>(
     initializeKanban([]),
   );
@@ -101,9 +103,20 @@ const KanbanContainer = () => {
     ? getPostById(kanbanSections[activeKey as string], activePostId)
     : null;
 
+  const changeSectionhandler = useCallback(
+    (e: SelectChangeEvent<string>) => {
+      setSection(e.target.value);
+    },
+    [section],
+  );
+
   return (
     <Box>
-      <KanbanInput setKanbanSections={setKanbanSections} />
+      <KanbanInput
+        setKanbanSections={setKanbanSections}
+        value={section}
+        onChange={changeSectionhandler}
+      />
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}

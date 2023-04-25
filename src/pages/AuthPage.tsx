@@ -9,7 +9,7 @@ const AuthPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
+    if (user) {
       navigate("/");
     }
   }, []);

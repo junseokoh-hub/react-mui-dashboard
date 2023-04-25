@@ -1,14 +1,24 @@
 import { Dispatch, SetStateAction, useRef } from "react";
-import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import Input from "@mui/material/Input";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
 import Button from "../atoms/Button";
 import { KanbanSectionsType, StatusType } from "../../types/kanban";
 
 interface KanbanInputProps {
   setKanbanSections: Dispatch<SetStateAction<KanbanSectionsType>>;
+  onChange: (e: SelectChangeEvent<string>) => void;
+  value: string;
 }
 
-const KanbanInput = ({ setKanbanSections }: KanbanInputProps) => {
+const KanbanInput = ({
+  setKanbanSections,
+  onChange,
+  value,
+}: KanbanInputProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const nextId = useRef(0);
 
@@ -17,12 +27,12 @@ const KanbanInput = ({ setKanbanSections }: KanbanInputProps) => {
       const newPost = {
         id: nextId.current.toString(),
         title: inputRef.current.value,
-        status: "requested" as StatusType,
+        status: value as StatusType,
       };
 
       setKanbanSections((prev) => ({
         ...prev,
-        requested: [...prev["requested"], newPost],
+        [value]: [...prev[value], newPost],
       }));
       nextId.current += 1;
       inputRef.current.value = "";
@@ -30,13 +40,27 @@ const KanbanInput = ({ setKanbanSections }: KanbanInputProps) => {
   };
 
   return (
-    <Box sx={{ mt: 1 }}>
+    <Stack direction="row" spacing={2} sx={{ mt: 1, alignItems: "center" }}>
       <Input
         type="text"
         inputRef={inputRef}
         sx={{ mr: 1 }}
         placeholder="Write..."
       />
+      <FormControl sx={{ width: "10rem" }}>
+        <InputLabel id="section-selector">Sections</InputLabel>
+        <Select
+          labelId="section-selector"
+          id="demo-simple-select"
+          value={value}
+          label="Age"
+          onChange={onChange}
+        >
+          <MenuItem value={"requested"}>REQUESTED</MenuItem>
+          <MenuItem value={"in progress"}>IN PROGRESS</MenuItem>
+          <MenuItem value={"done"}>DONE</MenuItem>
+        </Select>
+      </FormControl>
       <Button
         id="kanban-button"
         name="kanban-button"
@@ -47,7 +71,7 @@ const KanbanInput = ({ setKanbanSections }: KanbanInputProps) => {
       >
         Submit
       </Button>
-    </Box>
+    </Stack>
   );
 };
 
