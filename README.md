@@ -2,7 +2,7 @@
 
 ## 웹사이트
 
-[배포 사이트]("https://luminous-sunburst-deee08.netlify.app/auth")
+[배포 사이트](https://luminous-sunburst-deee08.netlify.app/auth)
 
 <br>
 
