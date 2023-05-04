@@ -95,6 +95,7 @@ const Sidebar = () => {
           width: { sm: 100, md: 240 },
           boxSizing: "border-box",
         },
+        display: { xs: "none", sm: "block" },
       }}
       variant="permanent"
       anchor="left"

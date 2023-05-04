@@ -23,7 +23,9 @@ const CustomersPage = () => {
   return (
     <TableContainer
       component={Paper}
-      sx={{ width: { sm: "70%", md: "90%", lg: "100%" } }}
+      sx={{
+        width: { xs: "50%", sm: "70%", md: "90%", lg: "100%" },
+      }}
     >
       <Table>
         <TableHead keys={keys} />

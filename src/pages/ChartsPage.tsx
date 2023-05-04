@@ -19,8 +19,8 @@ const ChartsPage = () => {
   return (
     <ChartContainer
       sx={{
-        width: { sm: "500px", md: "700px", lg: "1200px" },
-        // width: "100%",
+        mt: 2,
+        width: { xs: "450px", sm: "500px", md: "700px", lg: "1200px" },
         height: "600px",
         position: "relative",
         overflow: "hidden",

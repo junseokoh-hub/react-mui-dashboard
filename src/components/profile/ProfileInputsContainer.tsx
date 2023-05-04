@@ -15,14 +15,14 @@ const ProfileInputsContainer = () => {
   return (
     <Box
       component={Paper}
-      width={{ sm: "60%", md: "80%", lg: "100%" }}
+      width={{ xs: "50%", sm: "90%", md: "80%", lg: "100%" }}
       display="flex"
       justifyContent={"center"}
       alignItems={"center"}
     >
       <Box p={1} width="50rem" display="flex" flexDirection="column">
         <Grid container spacing={2}>
-          <Grid item lg={6}>
+          <Grid item xs={12} lg={6}>
             <Input
               name="first_name"
               type="text"
@@ -31,7 +31,7 @@ const ProfileInputsContainer = () => {
               fullWidth={true}
             />
           </Grid>
-          <Grid item lg={6}>
+          <Grid item xs={12} lg={6}>
             <Input
               name="last_name"
               type="text"
@@ -40,7 +40,7 @@ const ProfileInputsContainer = () => {
               fullWidth={true}
             />
           </Grid>
-          <Grid item lg={6}>
+          <Grid item xs={12} lg={6}>
             <Input
               name="email"
               type="email"
@@ -49,7 +49,7 @@ const ProfileInputsContainer = () => {
               fullWidth={true}
             />
           </Grid>
-          <Grid item lg={6}>
+          <Grid item xs={12} lg={6}>
             <Input
               name="password"
               type="password"
@@ -58,7 +58,7 @@ const ProfileInputsContainer = () => {
               fullWidth={true}
             />
           </Grid>
-          <Grid item lg={12}>
+          <Grid item xs={12} lg={12}>
             <Input
               name="address"
               type="text"
@@ -67,7 +67,7 @@ const ProfileInputsContainer = () => {
               fullWidth={true}
             />
           </Grid>
-          <Grid item lg={6}>
+          <Grid item xs={12} lg={6}>
             <Input
               name="city"
               type="text"
@@ -76,7 +76,7 @@ const ProfileInputsContainer = () => {
               fullWidth={true}
             />
           </Grid>
-          <Grid item lg={4}>
+          <Grid item xs={12} lg={4}>
             <Input
               name="state"
               type="text"
@@ -85,20 +85,20 @@ const ProfileInputsContainer = () => {
               fullWidth={true}
             />
           </Grid>
-          <Grid item lg={2}>
-            <Input name="zip" type="text" variant="outlined" label="Zip" />
+          <Grid item xs={12} lg={2}>
+            <Input
+              name="zip"
+              type="text"
+              variant="outlined"
+              label="Zip"
+              fullWidth={true}
+            />
           </Grid>
-          <Grid item sm={12} md={12}>
+          <Grid item xs={12}>
             <InputLabel htmlFor="description">Description</InputLabel>
             <StyledTextarea name="description" id="description" rows={15} />
           </Grid>
-          <Grid
-            item
-            sm={12}
-            md={12}
-            lg={12}
-            sx={{ display: "grid", placeItems: "center" }}
-          >
+          <Grid item xs={12} sx={{ display: "grid", placeItems: "center" }}>
             <Button
               name="personal"
               type="submit"

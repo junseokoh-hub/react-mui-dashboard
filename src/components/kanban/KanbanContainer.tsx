@@ -111,7 +111,7 @@ const KanbanContainer = () => {
   );
 
   return (
-    <Box>
+    <Box sx={{ mt: { xs: 2, sm: 0 } }}>
       <KanbanInput
         setKanbanSections={setKanbanSections}
         value={section}
@@ -126,7 +126,7 @@ const KanbanContainer = () => {
       >
         <Grid container spacing={4} sx={{ mt: 1 }}>
           {Object.keys(kanbanSections).map((key) => (
-            <Grid key={key} item sm={12} md={4}>
+            <Grid key={key} item xs={12} md={4}>
               <KanbanPlate id={key} title={key} posts={kanbanSections[key]} />
             </Grid>
           ))}

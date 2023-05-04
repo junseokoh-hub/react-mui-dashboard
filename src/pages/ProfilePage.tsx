@@ -5,7 +5,7 @@ import ProfileInputsContainer from "../components/profile/ProfileInputsContainer
 const ProfilePage = () => {
   return (
     <Stack
-      height={"93%"}
+      height={"100%"}
       justifyContent={"space-around"}
       direction={{ sm: "column", lg: "row" }}
       spacing={2}

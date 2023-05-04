@@ -10,7 +10,7 @@ const ProfileInfo = () => {
   return (
     <Box
       component={Paper}
-      width={{ sm: "60%", md: "80%", lg: "100%" }}
+      width={{ xs: "50%", sm: "70%", md: "80%", lg: "100%" }}
       display="flex"
       justifyContent={"center"}
       alignItems={"center"}
@@ -34,7 +34,7 @@ const ProfileInfo = () => {
         />
         <Divider flexItem />
         <InputLabel>Description</InputLabel>
-        <Text paragraph>
+        <Text paragraph sx={{ p: 2 }}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
           veritatis excepturi accusantium magni id maxime ullam vitae libero
           tenetur distinctio. Unde officiis praesentium iure quidem quae facilis

@@ -22,10 +22,11 @@ const InfoCard = ({ card }: InfoCardProps) => {
     <Grid
       item
       key={card.id}
+      xs={12}
       sm={12}
       md={6}
       lg={3}
-      sx={{ display: "grid", placeItems: "center" }}
+      sx={{ mt: { xs: 2 }, display: "grid", placeItems: "center" }}
     >
       <Paper sx={{ width: "15rem", height: "10rem", position: "relative" }}>
         <Card
